@@ -16,29 +16,167 @@
             }
             #topLeft {
                 position: absolute;
-                clip-path: polygon(0 0, 80% 0, 0 80%);
+                clip-path: polygon(0 0, 80% 0, 30% 60%, 0 0);
+                width: 100vw;
+                height: 100vh;
+                z-index: 5;
+            }
+            #topLeft:hover {
+                clip-path: polygon(0 0, 82% 0, 30% 62%, 0 0);
+            }
+            #topRight {
+                position: absolute;
+                clip-path: polygon(78% 0, 100% 0, 100% 50%, 30% 50%);
+                z-index: 4;
+                width: 100vw;
+                height: 100vh;
+            }
+            #topRight:hover {
+                z-index: 5;
+                clip-path: polygon(78% 0, 100% 0, 100% 52%, 36.65% 52%);
+            }
+            #left {
+                position: absolute;
+                clip-path: polygon(0 0, 30% 0, 30% 100%, 0 100%);
+                width: 100vw;
+                height: 100vh;
+                z-index: 3;
+                object-position: -40vw 0;
+            }
+            #left:hover {
+                z-index: 5;
+                clip-path: polygon(0 0, 32% 57.75%, 32% 100%, 0 100%);
+            }
+            #bottomCenter {
+                position: absolute;
+                clip-path: polygon(30% 60%, 36% 50%, 65% 50%, 50% 100%, 28% 100%);
+                width: 100vw;
+                height: 100vh;
+                z-index: 2;
+            }
+            #bottomCenter:hover {
+                z-index: 5;
+                clip-path: polygon(29% 58%, 39% 49%, 66% 50%, 52% 100%, 29% 100%);
+            }
+            #bottomRight {
+                position: absolute;
+                clip-path: polygon(63% 0, 100% 0, 100% 100%, 48% 100%);
                 width: 100vw;
                 height: 100vh;
                 z-index: 1;
             }
-            #topRight {
-                position: absolute;
-                clip-path: polygon(78% 0, 100% 0, 100% 50%, 0 80%);
-                z-index: 0;
+            #bottomRight:hover {
+                z-index: 5;
+                clip-path: polygon(63% 49%, 100% 49%, 100% 100%, 48% 100%);
+            }
+            .modal {
+                background: black;
+                display: none;
+                position: fixed;
+                z-index: 6;
+                left: 0;
+                top: 0;
                 width: 100vw;
                 height: 100vh;
+            }
+            .modalImg {
+                width: 100vw;
+                height: 100vh;
+                position: absolute;
+                object-fit: cover;
+                z-index: inherit;
+            }
+            .close {
+                color: white;
+                font-size: 300%;
+                position: relative;
+                right: 3vw;
+                top: 3vh;
+                z-index: 7;
+            }
+            .close:hover {
+                color: rgb(207, 252, 252);
+            }
+            @media (max-width: 800px) {
+                .modalImg {
+                    height: auto;
+                    top: 20vh;
+                }
             }
         </style>
     </head>
     <body>
-        <img id="topLeft" src="fire.jpg">
-        <img id="topRight" src="glass.jpg">
-        <img src="hotGlass.jpg">
-        <img src="pipe.jpg">
-        <img src="torch.jpg">
+        <div id="topLeftModal" class="modal">
+            <span id="tlClose" class="close">&times;</span>
+            <img id="tlmImg" class="modalImg">
+        </div>
+        <div id="topRightModal" class="modal">
+            <span id="trClose" class="close">&times;</span>
+            <img id="trmImg" class="modalImg">
+        </div>
+        <div id="leftModal" class="modal">
+            <span id="leftClose" class="close">&times;</span>
+            <img id="leftmImg" class="modalImg">
+        </div>
+        <div id="bottomCenterModal" class="modal">
+            <span id="bcClose" class="close">&times;</span>
+            <img id="bcmImg" class="modalImg">
+        </div>
+        <div id="bottomRightModal" class="modal">
+            <span id="brClose" class="close">&times;</span>
+            <img id="brmImg" class="modalImg">
+        </div>
+
+        <img id="topLeft" class="overlay" src="fire.jpg">
+        <img id="topRight" class="overlay" src="hotGlass.jpg">
+        <img id="left" class="overlay" src="torch.jpg">
+        <img id="bottomCenter" class="overlay" src="pipe.jpg">
+        <img id="bottomRight" class="overlay" src="glass.jpg">
 
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+        <script type="text/javascript">
+        //TopLeft
+            document.getElementById('topLeft').onclick = function(){
+                document.getElementById('topLeftModal').style.display = "block";
+                document.getElementById('tlmImg').src = this.src;
+            }
+            document.getElementById("tlClose").onclick = function() {
+                document.getElementById('topLeftModal').style.display = "none";
+            }
+        //TopRight
+        document.getElementById('topRight').onclick = function(){
+                document.getElementById('topRightModal').style.display = "block";
+                document.getElementById('trmImg').src = this.src;
+            }
+            document.getElementById("trClose").onclick = function() {
+                document.getElementById('topRightModal').style.display = "none";
+            }
+        //left
+        document.getElementById('left').onclick = function(){
+                document.getElementById('leftModal').style.display = "block";
+                document.getElementById('leftmImg').src = this.src;
+            }
+            document.getElementById("leftClose").onclick = function() {
+                document.getElementById('leftModal').style.display = "none";
+            }
+        //bottomCenter
+        document.getElementById('bottomCenter').onclick = function(){
+                document.getElementById('bottomCenterModal').style.display = "block";
+                document.getElementById('bcmImg').src = this.src;
+            }
+            document.getElementById("bcClose").onclick = function() {
+                document.getElementById('bottomCenterModal').style.display = "none";
+            }
+        //bottomRight
+        document.getElementById('bottomRight').onclick = function(){
+                document.getElementById('bottomRightModal').style.display = "block";
+                document.getElementById('brmImg').src = this.src;
+            }
+            document.getElementById("brClose").onclick = function() {
+                document.getElementById('bottomRightModal').style.display = "none";
+            }
+        </script>
     </body>
 </html>
