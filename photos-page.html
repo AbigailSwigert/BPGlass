@@ -16,64 +16,74 @@
             }
             #topLeft {
                 position: absolute;
-                clip-path: polygon(0 0, 80% 0, 30% 60%, 0 0);
+                clip-path: polygon(10% 0, 80% 0, 40% 50%);
                 width: 100vw;
                 height: 100vh;
-                z-index: 5;
+                z-index: 6;
             }
             #topLeft:hover {
-                clip-path: polygon(0 0, 82% 0, 30% 62%, 0 0);
+                clip-path: polygon(9% 0, 81% 0, 39.85% 51%);
             }
             #topRight {
                 position: absolute;
-                clip-path: polygon(78% 0, 100% 0, 100% 50%, 30% 50%);
-                z-index: 4;
+                clip-path: polygon(78% 0, 100% 0, 100% 50%, 40% 50%);
+                z-index: 5;
                 width: 100vw;
                 height: 100vh;
             }
             #topRight:hover {
-                z-index: 5;
-                clip-path: polygon(78% 0, 100% 0, 100% 52%, 36.65% 52%);
+                z-index: 6;
+                clip-path: polygon(78% 0, 100% 0, 100% 51%, 40% 50%);
             }
             #left {
                 position: absolute;
-                clip-path: polygon(0 0, 30% 0, 30% 100%, 0 100%);
+                clip-path: polygon(0 0, 11% 0, 40% 50%, 37.5% 75%, 0 40%);
                 width: 100vw;
                 height: 100vh;
-                z-index: 3;
-                object-position: -40vw 0;
+                z-index: 4;
             }
             #left:hover {
-                z-index: 5;
-                clip-path: polygon(0 0, 32% 57.75%, 32% 100%, 0 100%);
+                z-index: 6;
+                clip-path: polygon(0 0, 11% 0, 41% 50%, 37.25% 78%, 0 40%);
             }
             #bottomCenter {
                 position: absolute;
-                clip-path: polygon(30% 60%, 36% 50%, 65% 50%, 50% 100%, 28% 100%);
+                clip-path: polygon(40% 49%, 75% 50%, 60% 100%, 35% 100%);
+                width: 100vw;
+                height: 100vh;
+                z-index: 3;
+            }
+            #bottomCenter:hover {
+                z-index: 6;
+                clip-path: polygon(39.5% 49%, 75% 50%, 61% 100%, 34% 100%);
+            }
+            #bottomLeft {
+                position: absolute;
+                clip-path: polygon(0 100%, 0 40%, 37.5% 74%, 36% 100%);
                 width: 100vw;
                 height: 100vh;
                 z-index: 2;
             }
-            #bottomCenter:hover {
-                z-index: 5;
-                clip-path: polygon(29% 58%, 39% 49%, 66% 50%, 52% 100%, 29% 100%);
+            #bottomLeft:hover {
+                z-index: 6;
+                clip-path: polygon(0 100%, 0 39%, 37.5% 73%, 36% 100%);
             }
             #bottomRight {
                 position: absolute;
-                clip-path: polygon(63% 0, 100% 0, 100% 100%, 48% 100%);
+                clip-path: polygon(74% 49%, 100% 49%, 100% 100%, 60% 100%);
                 width: 100vw;
                 height: 100vh;
                 z-index: 1;
             }
             #bottomRight:hover {
-                z-index: 5;
-                clip-path: polygon(63% 49%, 100% 49%, 100% 100%, 48% 100%);
+                z-index: 6;
+                clip-path: polygon(74% 50%, 100% 49%, 100% 100%, 59% 100%);
             }
             .modal {
                 background: black;
                 display: none;
                 position: fixed;
-                z-index: 6;
+                z-index: 7;
                 left: 0;
                 top: 0;
                 width: 100vw;
@@ -87,15 +97,15 @@
                 z-index: inherit;
             }
             .close {
-                color: white;
+                color: blue;
                 font-size: 300%;
                 position: relative;
                 right: 3vw;
                 top: 3vh;
-                z-index: 7;
+                z-index: 8;
             }
             .close:hover {
-                color: rgb(207, 252, 252);
+                color: rgb(6, 31, 112);
             }
             @media (max-width: 800px) {
                 .modalImg {
@@ -118,6 +128,10 @@
             <span id="leftClose" class="close">&times;</span>
             <img id="leftmImg" class="modalImg">
         </div>
+        <div id="bottomLeftModal" class="modal">
+            <span id="blClose" class="close">&times;</span>
+            <img id="blmImg" class="modalImg">
+        </div>
         <div id="bottomCenterModal" class="modal">
             <span id="bcClose" class="close">&times;</span>
             <img id="bcmImg" class="modalImg">
@@ -127,11 +141,12 @@
             <img id="brmImg" class="modalImg">
         </div>
 
-        <img id="topLeft" class="overlay" src="fire.jpg">
-        <img id="topRight" class="overlay" src="hotGlass.jpg">
-        <img id="left" class="overlay" src="torch.jpg">
-        <img id="bottomCenter" class="overlay" src="pipe.jpg">
-        <img id="bottomRight" class="overlay" src="glass.jpg">
+        <img id="topLeft" src="photos/IMG_4070.jpg">
+        <img id="topRight" src="photos/IMG_4162.jpg">
+        <img id="left" src="photos/IMG_4090.jpg">
+        <img id="bottomCenter" src="photos/IMG_4173.jpg">
+        <img id="bottomRight" src="photos/IMG_4096.jpg">
+        <img id="bottomLeft" src="photos/IMG_4139.jpg">
 
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
@@ -160,6 +175,14 @@
             }
             document.getElementById("leftClose").onclick = function() {
                 document.getElementById('leftModal').style.display = "none";
+            }
+        //bottomLeft
+        document.getElementById('bottomLeft').onclick = function(){
+                document.getElementById('bottomLeftModal').style.display = "block";
+                document.getElementById('blmImg').src = this.src;
+            }
+            document.getElementById("blClose").onclick = function() {
+                document.getElementById('bottomLeftModal').style.display = "none";
             }
         //bottomCenter
         document.getElementById('bottomCenter').onclick = function(){
