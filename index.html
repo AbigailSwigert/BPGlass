@@ -21,12 +21,13 @@
                 display: flex;
                 flex-direction: row;
                 flex-flow: wrap;
+                justify-content: space-between;
             }
             #logoBox {
                 width: 50vw;
             }
             #centerLogo {
-                width: 40vw;
+                width: 30vw;
                 height: auto;
                 display: block;
                 margin: auto;
@@ -39,38 +40,35 @@
                 margin: auto;
                 display: flex;
                 flex-direction: column;
-                justify-content: center;
                 text-align: center;
                 font-family: 'Oswald', sans-serif;
-                margin: auto;
-                height: 90vh;
-                align-content: center;
-                min-width: 200px;
+                min-width: 250px;
             }
             #leftPhotos {
                 display: flex;
                 flex-direction: column;
                 width: 24vw;
+                min-width: 300px;
                 align-items: center;
-                min-width: 200px;
             }
             #rightPhotos {
                 display: flex;
                 flex-direction: column;
                 width: 24vw;
+                min-width: 300px;
                 align-items: center;
-                min-width: 200px;
+                border: 1px solid green;
             }
             .ex-photos {
                 width: 20vw;
                 height: auto;
                 margin: 5px 0;
-                min-width: 200px;
+                min-width: 250px;
             }
         </style>
     </head>
     <body>
-        <nav class="navbar navbar-expand navbar-dark"> <!--change "bg-____" to costomize color (or change the css)-->
+        <nav class="navbar navbar-expand navbar-dark"> <!--change "bg-____" to customize color (or change the css)-->
             <a class="navbar-brand" href="index.html">
                 <img class="logo" src="logo.png">
             </a> <!--make it a logo by adding img in link-->
