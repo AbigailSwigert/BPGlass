@@ -17,14 +17,22 @@
                 height: 40px;
                 width: auto;
             }
+            #container {
+                display: flex;
+                flex-direction: row;
+                flex-flow: wrap;
+            }
             #logoBox {
                 width: 50vw;
             }
             #centerLogo {
-                height: 60vh;
-                width: auto;
+                width: 40vw;
+                height: auto;
                 display: block;
                 margin: auto;
+                flex-shrink: 2;
+                object-fit: contain;
+                min-width: 0;
             }
             #center {
                 width: 50vw;
@@ -32,31 +40,32 @@
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
-                flex-basis: auto;
                 text-align: center;
                 font-family: 'Oswald', sans-serif;
                 margin: auto;
                 height: 90vh;
                 align-content: center;
+                min-width: 200px;
             }
             #leftPhotos {
-                float: left;
                 display: flex;
                 flex-direction: column;
                 width: 24vw;
                 align-items: center;
+                min-width: 200px;
             }
             #rightPhotos {
-                float: right;
                 display: flex;
                 flex-direction: column;
                 width: 24vw;
                 align-items: center;
+                min-width: 200px;
             }
             .ex-photos {
                 width: 20vw;
                 height: auto;
                 margin: 5px 0;
+                min-width: 200px;
             }
         </style>
     </head>
@@ -67,27 +76,30 @@
             </a> <!--make it a logo by adding img in link-->
             <div class="navbar-nav">
                 <a class="nav-item nav-link" href="photos-page.html">Photos</a>
-                <a class="nav-item nav-link" href="#">Contact</a>
+                <a class="nav-item nav-link" href="contact.html">Contact</a>
             </div>
         </nav>
-
-        <div id="leftPhotos">
-            <img class="ex-photos" src="photos/IMG_4088.jpg">
-            <img class="ex-photos" src="photos/IMG_4101.jpg">
-            <img class="ex-photos" src="photos/IMG_4104.jpg">
-            <img class="ex-photos" src="photos/IMG_4113.jpg">
-        </div>
-        <div id="rightPhotos">
-            <img class="ex-photos" src="photos/IMG_4120.jpg">
-            <img class="ex-photos" src="photos/IMG_4128.jpg">
-            <img class="ex-photos" src="photos/IMG_4151.jpg">
-            <img class="ex-photos" src="photos/IMG_4162.jpg">
-        </div>
-        <div id="center">
-            <div id="logoBox">
-                <img id="centerLogo" src="logo.png">
+        <div id="container">
+            <div id="leftPhotos">
+                <img class="ex-photos" src="photos/IMG_4088.jpg">
+                <img class="ex-photos" src="photos/IMG_4101.jpg">
+                <img class="ex-photos" src="photos/IMG_4104.jpg">
+                <img class="ex-photos" src="photos/IMG_4113.jpg">
             </div>
-            <p>BP Glass Works is a glass blowing company located in Dallas, Texas. Our product line includes a variety of hand crafted, all American glass pipes. Our products range from basic to very decorative, include dry pipes and water pipes, and all are very well priced. Our glass artists take a lot of time to make sure our products are the best looking and function perfectly. If you're looking for a line of pipes to add to your shop's inventory then these are a great way to go.</p>
+            
+            <div id="center">
+                <div id="logoBox">
+                    <img id="centerLogo" src="logo.png">
+                </div>
+                <p>BP Glass Works is a glass blowing company located in Dallas, Texas. Our product line includes a variety of hand crafted, all American glass pipes. Our products range from basic to very decorative, include dry pipes and water pipes, and all are very well priced. Our glass artists take a lot of time to make sure our products are the best looking and function perfectly. If you're looking for a line of pipes to add to your shop's inventory then these are a great way to go.</p>
+            </div>
+            
+            <div id="rightPhotos">
+                <img class="ex-photos" src="photos/IMG_4120.jpg">
+                <img class="ex-photos" src="photos/IMG_4128.jpg">
+                <img class="ex-photos" src="photos/IMG_4151.jpg">
+                <img class="ex-photos" src="photos/IMG_4162.jpg">
+            </div>
         </div>
         
         
