@@ -6,22 +6,93 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">      
         <meta http-equiv="x-ua-compatible" content="ie=edge">    
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet"> 
 
         <style type="text/css">
             .navbar {
-                margin-bottom: 10px;
+                margin-bottom: 5px;
                 background-color: rgb(54, 50, 50);
+            }
+            .logo {
+                height: 40px;
+                width: auto;
+            }
+            #logoBox {
+                width: 50vw;
+            }
+            #centerLogo {
+                height: 60vh;
+                width: auto;
+                display: block;
+                margin: auto;
+            }
+            #center {
+                width: 50vw;
+                margin: auto;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                flex-basis: auto;
+                text-align: center;
+                font-family: 'Oswald', sans-serif;
+                margin: auto;
+                height: 90vh;
+                align-content: center;
+            }
+            #leftPhotos {
+                float: left;
+                display: flex;
+                flex-direction: column;
+                width: 24vw;
+                align-items: center;
+            }
+            #rightPhotos {
+                float: right;
+                display: flex;
+                flex-direction: column;
+                width: 24vw;
+                align-items: center;
+            }
+            .ex-photos {
+                width: 20vw;
+                height: auto;
+                margin: 5px 0;
             }
         </style>
     </head>
     <body>
         <nav class="navbar navbar-expand navbar-dark"> <!--change "bg-____" to costomize color (or change the css)-->
-            <a class="navbar-brand" href="#">Home</a> <!--make it a logo by adding img in link-->
+            <a class="navbar-brand" href="index.html">
+                <img class="logo" src="logo.png">
+            </a> <!--make it a logo by adding img in link-->
             <div class="navbar-nav">
                 <a class="nav-item nav-link" href="photos-page.html">Photos</a>
                 <a class="nav-item nav-link" href="#">Contact</a>
             </div>
         </nav>
+
+        <div id="leftPhotos">
+            <img class="ex-photos" src="photos/IMG_4088.jpg">
+            <img class="ex-photos" src="photos/IMG_4101.jpg">
+            <img class="ex-photos" src="photos/IMG_4104.jpg">
+            <img class="ex-photos" src="photos/IMG_4113.jpg">
+        </div>
+        <div id="rightPhotos">
+            <img class="ex-photos" src="photos/IMG_4120.jpg">
+            <img class="ex-photos" src="photos/IMG_4128.jpg">
+            <img class="ex-photos" src="photos/IMG_4151.jpg">
+            <img class="ex-photos" src="photos/IMG_4162.jpg">
+        </div>
+        <div id="center">
+            <div id="logoBox">
+                <img id="centerLogo" src="logo.png">
+            </div>
+            <p>BP Glass Works is a glass blowing company located in Dallas, Texas. Our product line includes a variety of hand crafted, all American glass pipes. Our products range from basic to very decorative, include dry pipes and water pipes, and all are very well priced. Our glass artists take a lot of time to make sure our products are the best looking and function perfectly. If you're looking for a line of pipes to add to your shop's inventory then these are a great way to go.</p>
+        </div>
+        
+        
+        
+        <!--If you have any questions or would like to get more information on our company, please use the contact form below and we'll get back to you fast!-->
 
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
