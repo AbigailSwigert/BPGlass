@@ -16,80 +16,71 @@
                 height: 40px;
                 width: auto;
             }
-            .img-container {
+            #img-container {
                 position: absolute;
                 top: 0;
+                width: 100vw;
+                height: 100vh;
+                overflow: hidden;
             }
-            img {
+            .images {
                 display: flex;
                 margin: 0;
                 padding: 0;
                 object-fit: cover;
+                position: absolute;
+                width: 100vw;
+                height: 100vh;
+            }
+            #center {
+                clip-path: polygon(36% 0%, 58% 0%, 66% 40%, 58% 70%, 36% 70%, 28% 40%);
+                z-index: 6;
+            }
+            #center:hover {
+                clip-path: polygon(35% 0%, 59% 0%, 67% 40%, 59% 71%, 35% 71%, 27% 40%);
             }
             #topLeft {
-                position: absolute;
-                clip-path: polygon(10% 0, 80% 0, 40% 50%);
-                width: 100vw;
-                height: 100vh;
-                z-index: 6;
+                clip-path: polygon(0% 0%, 37% 0%, 28% 40%, 0% 55%);
+                z-index: 5;
             }
             #topLeft:hover {
-                clip-path: polygon(9% 0, 81% 0, 39.85% 51%);
-            }
-            #topRight {
-                position: absolute;
-                clip-path: polygon(78% 0, 100% 0, 100% 50%, 40% 50%);
-                z-index: 5;
-                width: 100vw;
-                height: 100vh;
-            }
-            #topRight:hover {
+                clip-path: polygon(0% 0%, 37% 0%, 28.25% 41%, 0% 56%);
                 z-index: 6;
-                clip-path: polygon(78% 0, 100% 0, 100% 51%, 40% 50%);
-            }
-            #left {
-                position: absolute;
-                clip-path: polygon(0 0, 11% 0, 40% 50%, 37.5% 75%, 0 40%);
-                width: 100vw;
-                height: 100vh;
-                z-index: 4;
-            }
-            #left:hover {
-                z-index: 6;
-                clip-path: polygon(0 0, 11% 0, 41% 50%, 37.25% 78%, 0 40%);
-            }
-            #bottomCenter {
-                position: absolute;
-                clip-path: polygon(40% 49%, 75% 50%, 60% 100%, 35% 100%);
-                width: 100vw;
-                height: 100vh;
-                z-index: 3;
-            }
-            #bottomCenter:hover {
-                z-index: 6;
-                clip-path: polygon(39.5% 49%, 75% 50%, 61% 100%, 34% 100%);
             }
             #bottomLeft {
-                position: absolute;
-                clip-path: polygon(0 100%, 0 40%, 37.5% 74%, 36% 100%);
-                width: 100vw;
-                height: 100vh;
-                z-index: 2;
+                clip-path: polygon(0% 54%, 28.25% 39%, 36% 70%, 20% 100%, 0% 100%);
+                z-index: 4;
             }
             #bottomLeft:hover {
+                clip-path: polygon(0% 54%, 28.25% 39%, 37% 70%, 21% 100%, 0% 100%);
                 z-index: 6;
-                clip-path: polygon(0 100%, 0 39%, 37.5% 73%, 36% 100%);
+            }
+            #bottomCenter {
+                clip-path: polygon(19% 100%, 35.5% 70%, 57.75% 69.5%, 74% 100%);
+                z-index: 3;
+                object-position: 0 20vh;
+            }
+            #bottomCenter:hover {
+                clip-path: polygon(19% 100%, 35.75% 69%, 58.25% 69%, 75% 100%);
+                z-index: 6;
             }
             #bottomRight {
-                position: absolute;
-                clip-path: polygon(74% 49%, 100% 49%, 100% 100%, 60% 100%);
-                width: 100vw;
-                height: 100vh;
-                z-index: 1;
+                clip-path: polygon(57% 70%, 65.75% 39.75%, 100% 55%, 100% 100%, 73% 100%);
+                z-index: 2;
+                object-position: 25vw 0;
             }
             #bottomRight:hover {
+                clip-path: polygon(57% 70%, 65.75% 39%, 100% 54%, 100% 100%, 73% 100%);
                 z-index: 6;
-                clip-path: polygon(74% 50%, 100% 49%, 100% 100%, 59% 100%);
+            }
+            #topRight {
+                clip-path: polygon(57% 0%, 100% 0%, 100% 56%, 65% 40%);
+                z-index: 1;
+                object-position: 25vw -25vh;
+            }
+            #topRight:hover {
+                clip-path: polygon(57% 0%, 100% 0%, 100% 56%, 65.75% 41%);
+                z-index: 6;
             }
             .modal {
                 background: black;
@@ -109,20 +100,51 @@
                 z-index: inherit;
             }
             .close {
-                color: blue;
-                font-size: 300%;
+                color: rgb(255, 208, 0);
+                opacity: .8;
+                font-size: 400%;
                 position: relative;
                 right: 3vw;
                 top: 3vh;
                 z-index: 8;
             }
             .close:hover {
-                color: rgb(6, 31, 112);
+                color: rgb(194, 149, 1);
+            }
+            #flex-container {
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: space-evenly;
+                display: none;
+            }
+            .flexImages {
+                width: 40vw;
+                min-width: 125px;
+                margin-top: 20px;
+            }
+            @media (max-width: 1200px) {
+                #bottomCenter {
+                    object-position: -40vw 25vh;
+                }
+                #bottomRight {
+                    object-position: 0 0;
+                }
+                #topRight {
+                    object-position: 0vw -25vh;
+                }
             }
             @media (max-width: 800px) {
                 .modalImg {
                     height: auto;
                     top: 20vh;
+                }
+            }
+            @media (max-width: 700px) , (max-height: 601px) {
+                #img-container {
+                    display: none;
+                }
+                #flex-container {
+                    display: flex;
                 }
             }
         </style>
@@ -137,17 +159,17 @@
                 <a class="nav-item nav-link" href="contact.html">Contact</a>
             </div>
         </nav>
-        <div id="topLeftModal" class="modal">
-            <span id="tlClose" class="close">&times;</span>
-            <img id="tlmImg" class="modalImg">
+        <div id="centerModal" class="modal">
+            <span id="cClose" class="close">&times;</span>
+            <img id="cmImg" class="modalImg">
         </div>
         <div id="topRightModal" class="modal">
             <span id="trClose" class="close">&times;</span>
             <img id="trmImg" class="modalImg">
         </div>
-        <div id="leftModal" class="modal">
-            <span id="leftClose" class="close">&times;</span>
-            <img id="leftmImg" class="modalImg">
+        <div id="topLeftModal" class="modal">
+            <span id="topLeftClose" class="close">&times;</span>
+            <img id="topLeftmImg" class="modalImg">
         </div>
         <div id="bottomLeftModal" class="modal">
             <span id="blClose" class="close">&times;</span>
@@ -161,26 +183,59 @@
             <span id="brClose" class="close">&times;</span>
             <img id="brmImg" class="modalImg">
         </div>
-        <div class="img-container">
-            <img id="topLeft" src="photos/IMG_4070.jpg">
-            <img id="topRight" src="photos/IMG_4162.jpg">
-            <img id="left" src="photos/IMG_4090.jpg">
-            <img id="bottomCenter" src="photos/IMG_4173.jpg">
-            <img id="bottomRight" src="photos/IMG_4096.jpg">
-            <img id="bottomLeft" src="photos/IMG_4139.jpg">
+        <div id="flex1Modal" class="modal">
+            <span id="flex1Close" class="close">&times;</span>
+            <img id="flex1Img" class="modalImg">
+        </div>
+        <div id="flex2Modal" class="modal">
+            <span id="flex2Close" class="close">&times;</span>
+            <img id="flex2Img" class="modalImg">
+        </div>
+        <div id="flex3Modal" class="modal">
+            <span id="flex3Close" class="close">&times;</span>
+            <img id="flex3Img" class="modalImg">
+        </div>
+        <div id="flex4Modal" class="modal">
+            <span id="flex4Close" class="close">&times;</span>
+            <img id="flex4Img" class="modalImg">
+        </div>
+        <div id="flex5Modal" class="modal">
+            <span id="flex5Close" class="close">&times;</span>
+            <img id="flex5Img" class="modalImg">
+        </div>
+        <div id="flex6Modal" class="modal">
+            <span id="flex6Close" class="close">&times;</span>
+            <img id="flex6Img" class="modalImg">
+        </div>
+        
+        <div id="img-container">
+            <img class="images" id="center" src="photos/IMG_4070.jpg">
+            <img class="images" id="topRight" src="photos/IMG_4162.jpg">
+            <img class="images" id="topLeft" src="photos/IMG_4090.jpg">
+            <img class="images" id="bottomCenter" src="photos/IMG_4139.jpg">
+            <img class="images" id="bottomRight" src="photos/IMG_4173.jpg">
+            <img class="images" id="bottomLeft" src="photos/IMG_4096.jpg">
+        </div>
+        <div id="flex-container">
+            <img class="flexImages" id="flex1" src="photos/IMG_4070.jpg">
+            <img class="flexImages" id="flex2" src="photos/IMG_4162.jpg">
+            <img class="flexImages" id="flex3" src="photos/IMG_4090.jpg">
+            <img class="flexImages" id="flex4" src="photos/IMG_4139.jpg">
+            <img class="flexImages" id="flex5" src="photos/IMG_4173.jpg">
+            <img class="flexImages" id="flex6" src="photos/IMG_4096.jpg">
         </div>
 
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
         <script type="text/javascript">
-        //TopLeft
-            document.getElementById('topLeft').onclick = function(){
-                document.getElementById('topLeftModal').style.display = "block";
-                document.getElementById('tlmImg').src = this.src;
+        //Center
+            document.getElementById('center').onclick = function(){
+                document.getElementById('centerModal').style.display = "block";
+                document.getElementById('cmImg').src = this.src;
             }
-            document.getElementById("tlClose").onclick = function() {
-                document.getElementById('topLeftModal').style.display = "none";
+            document.getElementById("cClose").onclick = function() {
+                document.getElementById('centerModal').style.display = "none";
             }
         //TopRight
         document.getElementById('topRight').onclick = function(){
@@ -190,13 +245,13 @@
             document.getElementById("trClose").onclick = function() {
                 document.getElementById('topRightModal').style.display = "none";
             }
-        //left
-        document.getElementById('left').onclick = function(){
-                document.getElementById('leftModal').style.display = "block";
-                document.getElementById('leftmImg').src = this.src;
+        //topLeft
+        document.getElementById('topLeft').onclick = function(){
+                document.getElementById('topLeftModal').style.display = "block";
+                document.getElementById('topLeftmImg').src = this.src;
             }
-            document.getElementById("leftClose").onclick = function() {
-                document.getElementById('leftModal').style.display = "none";
+            document.getElementById("topLeftClose").onclick = function() {
+                document.getElementById('topLeftModal').style.display = "none";
             }
         //bottomLeft
         document.getElementById('bottomLeft').onclick = function(){
@@ -221,6 +276,54 @@
             }
             document.getElementById("brClose").onclick = function() {
                 document.getElementById('bottomRightModal').style.display = "none";
+            }
+        //flex1
+        document.getElementById('flex1').onclick = function(){
+                document.getElementById('flex1Modal').style.display = "block";
+                document.getElementById('flex1Img').src = this.src;
+            }
+            document.getElementById("flex1Close").onclick = function() {
+                document.getElementById('flex1Modal').style.display = "none";
+            }
+        //flex2
+        document.getElementById('flex2').onclick = function(){
+                document.getElementById('flex2Modal').style.display = "block";
+                document.getElementById('flex2Img').src = this.src;
+            }
+            document.getElementById("flex2Close").onclick = function() {
+                document.getElementById('flex2Modal').style.display = "none";
+            }
+        //flex3
+        document.getElementById('flex3').onclick = function(){
+                document.getElementById('flex3Modal').style.display = "block";
+                document.getElementById('flex3Img').src = this.src;
+            }
+            document.getElementById("flex3Close").onclick = function() {
+                document.getElementById('flex3Modal').style.display = "none";
+            }
+        //flex4
+        document.getElementById('flex4').onclick = function(){
+                document.getElementById('flex4Modal').style.display = "block";
+                document.getElementById('flex4Img').src = this.src;
+            }
+            document.getElementById("flex4Close").onclick = function() {
+                document.getElementById('flex4Modal').style.display = "none";
+            }
+        //flex5
+        document.getElementById('flex5').onclick = function(){
+                document.getElementById('flex5Modal').style.display = "block";
+                document.getElementById('flex5Img').src = this.src;
+            }
+            document.getElementById("flex5Close").onclick = function() {
+                document.getElementById('flex5Modal').style.display = "none";
+            }
+        //flex6
+        document.getElementById('flex6').onclick = function(){
+                document.getElementById('flex6Modal').style.display = "block";
+                document.getElementById('flex6Img').src = this.src;
+            }
+            document.getElementById("flex6Close").onclick = function() {
+                document.getElementById('flex6Modal').style.display = "none";
             }
         </script>
     </body>
